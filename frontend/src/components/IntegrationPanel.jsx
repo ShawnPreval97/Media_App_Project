@@ -1,32 +1,43 @@
-import React, { useState } from 'react';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function IntegrationPanel() {
-  const [googleConnected, setGoogleConnected] = useState(false);
-  const [metaConnected, setMetaConnected] = useState(false);
-
   return (
-    <div className="bg-white p-6 rounded-2xl shadow">
-      <h2 className="text-2xl font-semibold mb-4">🔌 Integrations</h2>
-      <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <span>Google Ads</span>
-          <button
-            onClick={() => setGoogleConnected(!googleConnected)}
-            className={`px-3 py-1 rounded text-sm font-medium ${googleConnected ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-800'}`}
-          >
-            {googleConnected ? 'Connected' : 'Connect'}
-          </button>
-        </div>
-        <div className="flex items-center justify-between">
-          <span>Meta Ads</span>
-          <button
-            onClick={() => setMetaConnected(!metaConnected)}
-            className={`px-3 py-1 rounded text-sm font-medium ${metaConnected ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-800'}`}
-          >
-            {metaConnected ? 'Connected' : 'Connect'}
-          </button>
-        </div>
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
+
+      {/* Plaid or Banking Integration */}
+      <Card className="col-span-full">
+        <CardHeader>
+          <CardTitle>🏦 Financial Data Integration</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-gray-600 mb-2">Connect accounts via Plaid or other providers to pull in transaction data, spending patterns, and account summaries.</p>
+          <Button className="bg-green-600 text-white hover:bg-green-700">🔗 Connect with Plaid</Button>
+        </CardContent>
+      </Card>
+
+      {/* CSV Upload */}
+      <Card className="col-span-full">
+        <CardHeader>
+          <CardTitle>📂 Upload CSV Data</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-gray-600 mb-2">Upload survey responses, ad performance exports, or budget sheets to populate Lucidframe modules.</p>
+          <Button className="bg-blue-600 text-white hover:bg-blue-700">📁 Choose CSV File</Button>
+        </CardContent>
+      </Card>
+
+      {/* API Configuration */}
+      <Card className="col-span-full">
+        <CardHeader>
+          <CardTitle>⚙️ Custom API Configuration</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-gray-600 mb-2">Set up third-party connectors (e.g., Meta, Google Ads, survey panels) to enable live data sync across Lucidframe.</p>
+          <Button className="bg-gray-700 text-white hover:bg-black">🛠️ Configure APIs</Button>
+        </CardContent>
+      </Card>
+
     </div>
   );
 }

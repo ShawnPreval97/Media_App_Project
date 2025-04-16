@@ -1,0 +1,28 @@
+{
+  "name": "lucidframe_github_starter",
+  "version": "1.0.0",
+  "description": "**Lucidframe** is a modular, analyst-driven platform that bridges the gap between consumer insights and media activation. It mimics real-world systems like Qualtrics Stats iQ, Google Ads dashboards, and media planning spreadsheets — but streamlined into a single, interactive product.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShawnPreval97/Media_App_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShawnPreval97/Media_App_Project/issues"
+  },
+  "homepage": "https://github.com/ShawnPreval97/Media_App_Project#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.4"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
+  }
+}

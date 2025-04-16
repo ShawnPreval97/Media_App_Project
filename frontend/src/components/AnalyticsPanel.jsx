@@ -1,23 +1,48 @@
-import React from 'react';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function AnalyticsPanel() {
-  const metrics = [
-    { label: 'CTR', value: '2.4%' },
-    { label: 'ROAS', value: '3.2x' },
-    { label: 'Impressions', value: '150K' },
-  ];
-
   return (
-    <div className="bg-white p-6 rounded-2xl shadow">
-      <h2 className="text-2xl font-semibold mb-4">📈 Analytics Loop</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {metrics.map((m, idx) => (
-          <div key={idx} className="p-4 bg-yellow-50 rounded-lg shadow">
-            <h3 className="text-lg font-bold mb-1">{m.label}</h3>
-            <p className="text-gray-700 text-xl">{m.value}</p>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
+
+      {/* Causal Impact Analysis */}
+      <Card className="col-span-full">
+        <CardHeader>
+          <CardTitle>📉 Causal Impact Analysis</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-gray-600 mb-2">Compare performance before and after a campaign launch or feature change. Useful for identifying true lift from interventions.</p>
+          <div className="mt-4 h-32 bg-gray-100 rounded-xl flex items-center justify-center text-gray-400">
+            Graph placeholder (line chart: Control vs Treatment)
           </div>
-        ))}
-      </div>
+        </CardContent>
+      </Card>
+
+      {/* Attribution Map Visualizer */}
+      <Card className="col-span-full">
+        <CardHeader>
+          <CardTitle>🔀 Attribution Map</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-gray-600 mb-2">Visualize how different touchpoints (email, social, paid search) contributed to conversion.</p>
+          <div className="mt-4 h-32 bg-gray-100 rounded-xl flex items-center justify-center text-gray-400">
+            Diagram placeholder (Sankey / funnel flow)
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Narrative Export */}
+      <Card className="col-span-full">
+        <CardHeader>
+          <CardTitle>🧾 Narrative Summary Export</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-gray-600 mb-4">Auto-generate slide-friendly summaries with key takeaways, top metrics, and supporting visuals.</p>
+          <Button className="bg-blue-600 text-white hover:bg-blue-700">📤 Export to Slide Deck</Button>
+        </CardContent>
+      </Card>
+
     </div>
   );
 }
+
